@@ -1,7 +1,36 @@
-﻿
-@{
-    ViewData["Title"] = "GetVerifyAuthResult";
+﻿@{
+	ViewBag.Title = "GetVerifyAuthResult (본인인증 결과확인)";
 }
 
-<h2>GetVerifyAuthResult</h2>
+<div id="content">
+	<p class="heading1">Response</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>@ViewData["Title"]</legend>
+		<ul>
+			<li>receitpId (접수아이디) :  @Model.receiptID</li>
+			<li>clientCode (이용기관코드) :  @Model.clientCode  </li>
+			<li>clientName (이용기관명) :  @Model.clientName  </li>
+			<li>state (상태코드) :  @Model.state  </li>
+			<li>regDT (등록일시) :  @Model.regDT  </li>
+			<li>expires_in (인증요청 만료시간(초)) :  @Model.expires_in  </li>
+			<li>callCenterNum (고객센터 번호) :  @Model.callCenterNum  </li>
+			<li>token (토큰 원문) :  @Model.token  </li>
+			<li>returnToken (요청시 기재한 토큰 원문) :  @Model.returnToken  </li>
+			<li>allowSimpleRegistYN (은행계좌 실명확인 생략여부	) :  @Model.allowSimpleRegistYN  </li>
+			<li>verifyNameYN (수신자 실명확인 여부) :  @Model.verifyNameYN  </li>
+			<li>payload (payload) :  @Model.payload  </li>
+			<li>requestDT (카카오 인증서버 등록일시) :  @Model.requestDT  </li>
+			<li>expireDT (인증요청 만료일시) :  @Model.expireDT  </li>
+			<li>tmstitle (인증요청 메시지 제목) :  @Model.tmstitle  </li>
+			<li>tmsmessage (인증요청 메시지 부가내용) :  @Model.tmsmessage  </li>
+			<li>subClientName (별칭) :  @Model.subClientName  </li>
+			<li>subClientCode (별칭코드) :  @Model.subClientCode  </li>
+			<li>viewDT (수신자 카카오톡 인증메시지 확인일시) :  @Model.viewDT  </li>
+			<li>completeDT (수신자 카카오톡 전자서명 완료일시	) :  @Model.completeDT  </li>
+			<li>verifyDT (전자서명 검증일시) :  @Model.verifyDT  </li>
+		</ul>
+	</fieldset>
+</div>
+
 
