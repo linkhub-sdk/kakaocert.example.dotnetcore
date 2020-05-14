@@ -1,0 +1,32 @@
+﻿@{
+	ViewBag.Title = "Kakaocert SDK ASP.NET Core Example.";
+}
+
+<div id="content">
+	<p class="heading1">@ViewData["Title"]</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>간편 전자서명 API</legend>
+		<ul>
+			<li><a href="RequestESign">RequestESign</a> (간편 전자서명 요청)</li>
+			<li><a href="GetESignResult">GetESignResult</a> (간편 전자서명 결과정보 확인)</li>
+		</ul>
+	</fieldset>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>본인인증 API</legend>
+		<ul>
+			<li><a href="RequestESign">RequestVerifyAuth</a> (본인인증 요청)</li>
+			<li><a href="GetESignResult">GetVerifyAuthResult</a> (본인인증 결과정보 확인)</li>
+		</ul>
+	</fieldset>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>자동이체 출금동의 API</legend>
+		<ul>
+			<li><a href="RequestESign">RequestCMS</a> (자동이체 출금동의 요청)</li>
+			<li><a href="GetESignResult">GetCMSResult</a> (자동이체 출금동의 결과정보 확인)</li>
+		</ul>
+	</fieldset>
+
+</div>
