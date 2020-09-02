@@ -1,0 +1,15 @@
+﻿@{
+	ViewBag.Title = "전자서명 요청";
+}
+
+<div id="content">
+	<p class="heading1">Result</p>
+	<br />
+	<fieldset class="fieldset1">
+		<legend>@ViewData["Title"]</legend>
+		<ul>
+			<li>ReceiptID (접수아이디) : @Model.receiptId</li>
+			<li>tx_id (카카오톡 트랜잭션아이디[AppToApp호출용]) : @Model.tx_id</li>
+		</ul>
+	</fieldset>
+</div>
