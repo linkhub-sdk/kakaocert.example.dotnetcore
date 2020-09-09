@@ -40,13 +40,13 @@ namespace KakaocertExample.Controllers
             requestObj.Expires_in = 60;
 
             // 수신자 생년월일, 형식 : YYYYMMDD
-            requestObj.ReceiverBirthDay = "19800101";
+            requestObj.ReceiverBirthDay = "19900108";
 
             // 수신자 휴대폰번호
-            requestObj.ReceiverHP = "010111222";
+            requestObj.ReceiverHP = "01043245117";
 
             // 수신자 성명
-            requestObj.ReceiverName = "테스트";
+            requestObj.ReceiverName = "정요한";
 
             // 별칭코드, 이용기관이 생성한 별칭코드 (파트너 사이트에서 확인가능)
             // 카카오톡 인증메시지 중 "요청기관" 항목에 표시
@@ -89,26 +89,50 @@ namespace KakaocertExample.Controllers
             }
         }
 
-        public IActionResult GetESignResult()
+        public IActionResult GetESignState()
         {
             /**
-            * 전자서명 결과정보를 확인합니다.
+            * 전자서명 상태정보를 확인합니다.
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020090210193200001";
+            string receiptId = "020090910164100001";
+
+            try
+            {
+                var resultObj = _kakaocertService.getESignState(clientCode, receiptId);
+                return View("GetESignState", resultObj);
+            }
+            catch (KakaocertException ke)
+            {
+                return View("Exception", ke);
+            }
+
+        }
+
+        public IActionResult VerifyESign()
+        {
+            /**
+            * 전자서명 서명을 검증합니다.
+            */
+
+            // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
+            string clientCode = "020040000001";
+
+            // 요청시 반환받은 접수아이디
+            string receiptId = "020090910164100001";
 
             // AppToApp 인증시 앱스킴 success로 반환되는 서명값 기재.
-            // Talk Message  인증시 null 처리.
+            // Talk Message 인증시 null 기재하여 호출.
             string signature = null;
 
             try
             {
-                var resultObj = _kakaocertService.GetESignResult(clientCode, receiptId, signature);
-                return View("GetESignResult", resultObj);
+                var resultObj = _kakaocertService.verifyESign(clientCode, receiptId, signature);
+                return View("ResponseVerify", resultObj);
             }
             catch (KakaocertException ke)
             {
@@ -137,13 +161,13 @@ namespace KakaocertExample.Controllers
             requestObj.Expires_in = 60;
 
             // 수신자 생년월일, 형식 : YYYYMMDD
-            requestObj.ReceiverBirthDay = "19700101";
+            requestObj.ReceiverBirthDay = "19900108";
 
             // 수신자 휴대폰번호
-            requestObj.ReceiverHP = "01012341234";
+            requestObj.ReceiverHP = "01043245117";
 
             // 수신자 성명
-            requestObj.ReceiverName = "테스트";
+            requestObj.ReceiverName = "정요한";
 
             // 별칭코드, 이용기관이 생성한 별칭코드 (파트너 사이트에서 확인가능)
             // 카카오톡 인증메시지 중 "요청기관" 항목에 표시
@@ -184,22 +208,46 @@ namespace KakaocertExample.Controllers
             }
         }
 
-        public IActionResult GetVerifyAuthResult()
+        public IActionResult GetVerifyAuthState()
         {
             /**
-            * 본인인증 결과정보를 확인합니다.
+            * 본인인증 상태정보를 확인합니다.
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020051110555900001";
+            string receiptId = "020090910174500001";
 
             try
             {
-                var resultObj = _kakaocertService.GetVerifyAuthResult(clientCode, receiptId);
-                return View("GetVerifyAuthResult", resultObj);
+                var resultObj = _kakaocertService.getVerifyAuthState(clientCode, receiptId);
+                return View("GetVerifyAuthState", resultObj);
+            }
+            catch (KakaocertException ke)
+            {
+                return View("Exception", ke);
+            }
+
+        }
+
+        public IActionResult VerifyAuth()
+        {
+            /**
+            * 본인인증 서명을 검증합니다.
+            */
+
+            // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
+            string clientCode = "020040000001";
+
+            // 요청시 반환받은 접수아이디
+            string receiptId = "020090910174500001";
+
+            try
+            {
+                var resultObj = _kakaocertService.verifyAuth(clientCode, receiptId);
+                return View("ResponseVerify", resultObj);
             }
             catch (KakaocertException ke)
             {
@@ -211,7 +259,7 @@ namespace KakaocertExample.Controllers
         public IActionResult RequestCMS()
         {
             /**
-            * 간편 전자서명을 요청합니다.
+            *  자동이체 출금동의 서명을 요청합니다.
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -226,13 +274,13 @@ namespace KakaocertExample.Controllers
             requestObj.Expires_in = 60;
 
             // 수신자 생년월일, 형식 : YYYYMMDD
-            requestObj.ReceiverBirthDay = "19700101";
+            requestObj.ReceiverBirthDay = "19900108";
 
             // 수신자 휴대폰번호
-            requestObj.ReceiverHP = "01012341234";
+            requestObj.ReceiverHP = "01043245117";
 
             // 수신자 성명
-            requestObj.ReceiverName = "테스트";
+            requestObj.ReceiverName = "정요한";
 
 
             // 예금주명	
@@ -284,22 +332,46 @@ namespace KakaocertExample.Controllers
             }
         }
 
-        public IActionResult GetCMSResult()
+        public IActionResult GetCMSState()
         {
             /**
-            * 자동이체 출금동의 결과정보를 확인합니다.
+            * 자동이체 출금동의 상태정보를 확인합니다.
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020050711485700001";
+            string receiptId = "020090910184500001";
 
             try
             {
-                var resultObj = _kakaocertService.GetCMSResult(clientCode, receiptId);
-                return View("GetCMSResult", resultObj);
+                var resultObj = _kakaocertService.getCMSState(clientCode, receiptId);
+                return View("GetCMSState", resultObj);
+            }
+            catch (KakaocertException ke)
+            {
+                return View("Exception", ke);
+            }
+
+        }
+
+        public IActionResult VerifyCMS()
+        {
+            /**
+            * 자동이체 출금동의 서명을 검증합니다.
+            */
+
+            // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
+            string clientCode = "020040000001";
+
+            // 요청시 반환받은 접수아이디
+            string receiptId = "020090910184500001";
+
+            try
+            {
+                var resultObj = _kakaocertService.verifyCMS(clientCode, receiptId);
+                return View("ResponseVerify", resultObj);
             }
             catch (KakaocertException ke)
             {
