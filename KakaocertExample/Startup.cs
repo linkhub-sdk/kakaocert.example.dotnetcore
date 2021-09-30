@@ -19,6 +19,9 @@ public class KakaocertInstance
 
         //인증토큰의 IP제한기능 사용여부, 권장(true)
         kakaocertService.IPRestrictOnOff = true;
+
+        //카카오써트 API 서비스 고정 IP 사용여부, true-사용, false-미사용, 기본값(false)
+        kakaocertService.UseStaticIP = false;
     }
 }
 
