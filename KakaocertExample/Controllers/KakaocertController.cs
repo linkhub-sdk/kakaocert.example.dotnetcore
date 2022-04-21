@@ -36,6 +36,9 @@ namespace KakaocertExample.Controllers
             // 고객센터 전화번호, 카카오톡 인증메시지 중 "고객센터" 항목에 표시
             requestObj.CallCenterNum = "1600-8536";
 
+            // 고객센터명, 카카오톡 인증메시지 중 "고객센터명" 항목에 표시
+            requestObj.CallCenterName = "테스트";
+
             // 인증요청 만료시간(초), 최대값 1000, 인증요청 만료시간(초) 내에 미인증시 만료 상태로 처리됨
             requestObj.Expires_in = 60;
 
@@ -43,10 +46,10 @@ namespace KakaocertExample.Controllers
             requestObj.ReceiverBirthDay = "19900108";
 
             // 수신자 휴대폰번호
-            requestObj.ReceiverHP = "01043245117";
+            requestObj.ReceiverHP = "010111222";
 
             // 수신자 성명
-            requestObj.ReceiverName = "정요한";
+            requestObj.ReceiverName = "홍길동";
 
             // 별칭코드, 이용기관이 생성한 별칭코드 (파트너 사이트에서 확인가능)
             // 카카오톡 인증메시지 중 "요청기관" 항목에 표시
@@ -159,6 +162,9 @@ namespace KakaocertExample.Controllers
             // 고객센터 전화번호, 카카오톡 인증메시지 중 "고객센터" 항목에 표시
             requestObj.CallCenterNum = "1600-8536";
 
+            // 고객센터명, 카카오톡 인증메시지 중 "고객센터명" 항목에 표시
+            requestObj.CallCenterName = "테스트";
+
             // 인증요청 만료시간(초), 인증요청 만료시간(초) 내에 미인증시, 만료 상태로 처리됨
             requestObj.Expires_in = 60;
 
@@ -166,10 +172,10 @@ namespace KakaocertExample.Controllers
             requestObj.ReceiverBirthDay = "19900108";
 
             // 수신자 휴대폰번호
-            requestObj.ReceiverHP = "01043245117";
+            requestObj.ReceiverHP = "010111222";
 
             // 수신자 성명
-            requestObj.ReceiverName = "정요한";
+            requestObj.ReceiverName = "홍길동";
 
             // 별칭코드, 이용기관이 생성한 별칭코드 (파트너 사이트에서 확인가능)
             // 카카오톡 인증메시지 중 "요청기관" 항목에 표시
@@ -270,10 +276,16 @@ namespace KakaocertExample.Controllers
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
             string clientCode = "020040000001";
 
+            // AppToApp 인증여부, true-AppToApp 방식, false-TalkMessage 방식
+            bool isAppUseYN = false;
+
             RequestCMS requestObj = new RequestCMS();
 
             // 고객센터 전화번호, 카카오톡 인증메시지 중 "고객센터" 항목에 표시
             requestObj.CallCenterNum = "1600-8536";
+
+            // 고객센터명, 카카오톡 인증메시지 중 "고객센터명" 항목에 표시
+            requestObj.CallCenterName = "테스트";
 
             // 인증요청 만료시간(초), 인증요청 만료시간(초) 내에 미인증시, 만료 상태로 처리됨
             requestObj.Expires_in = 60;
@@ -282,10 +294,10 @@ namespace KakaocertExample.Controllers
             requestObj.ReceiverBirthDay = "19900108";
 
             // 수신자 휴대폰번호
-            requestObj.ReceiverHP = "01043245117";
+            requestObj.ReceiverHP = "010111222";
 
             // 수신자 성명
-            requestObj.ReceiverName = "정요한";
+            requestObj.ReceiverName = "홍길동";
 
 
             // 예금주명	
@@ -328,7 +340,7 @@ namespace KakaocertExample.Controllers
 
             try
             {
-                var result = _kakaocertService.requestCMS(clientCode, requestObj);
+                var result = _kakaocertService.requestCMS(clientCode, requestObj, isAppUseYN);
                 return View("ReceiptID", result);
             }
             catch (KakaocertException ke)
