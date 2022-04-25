@@ -294,7 +294,7 @@ namespace KakaocertExample.Controllers
             requestObj.ReceiverBirthDay = "19900108";
 
             // 수신자 휴대폰번호
-            requestObj.ReceiverHP = "010111222";
+            requestObj.ReceiverHP = "01011112222";
 
             // 수신자 성명
             requestObj.ReceiverName = "홍길동";
@@ -341,7 +341,7 @@ namespace KakaocertExample.Controllers
             try
             {
                 var result = _kakaocertService.requestCMS(clientCode, requestObj, isAppUseYN);
-                return View("ReceiptID", result);
+                return View("ResponseCMS", result);
             }
             catch (KakaocertException ke)
             {
