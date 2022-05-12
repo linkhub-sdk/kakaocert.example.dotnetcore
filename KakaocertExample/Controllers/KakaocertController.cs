@@ -23,6 +23,7 @@ namespace KakaocertExample.Controllers
         {
             /**
             * 전자서명을 요청합니다.
+            * - https://www.kakaocert.com/docs/ESign/API/dotnetcore#RequestESign
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -96,6 +97,7 @@ namespace KakaocertExample.Controllers
         {
             /**
             * 전자서명 서명 상태를 합니다.
+            * - https://www.kakaocert.com/docs/ESign/API/dotnetcore#GetESignState
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -122,6 +124,7 @@ namespace KakaocertExample.Controllers
             * 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
             * - 서명검증시 전자서명 데이터 전문(signedData)이 반환됩니다.
             * - 카카오페이 서비스 운영정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류처리됩니다.
+            * - https://www.kakaocert.com/docs/ESign/API/dotnetcore#VerifyESign
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -152,6 +155,7 @@ namespace KakaocertExample.Controllers
         {
             /**
              * 본인인증을 요청합니다.
+             * - https://www.kakaocert.com/docs/verifyAuth/API/dotnetcore#RequestVerifyAuth
              */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -220,6 +224,7 @@ namespace KakaocertExample.Controllers
         {
             /**
             * 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+            * - https://www.kakaocert.com/docs/verifyAuth/API/dotnetcore#GetVerifyAuthState
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -247,6 +252,7 @@ namespace KakaocertExample.Controllers
             * - 서명검증시 전자서명 데이터 전문(signedData)이 반환됩니다.
             * - 본인인증 요청시 작성한 Token과 서명 검증시 반환되는 signedData의 동일여부를 확인하여 본인인증 검증을 완료합니다.
             * - 카카오페이 서비스 운영정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류처리됩니다.
+            * - https://www.kakaocert.com/docs/verifyAuth/API/dotnetcore#F-VerifyAuth
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -271,6 +277,7 @@ namespace KakaocertExample.Controllers
         {
             /**
             *  자동이체 출금동의 서명을 요청합니다.
+            *  - https://www.kakaocert.com/docs/CMS/API/dotnetcore#RequestCMS
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -353,6 +360,7 @@ namespace KakaocertExample.Controllers
         {
             /**
             * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+            * - https://www.kakaocert.com/docs/CMS/API/dotnetcore#GetCMSState
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
@@ -379,6 +387,7 @@ namespace KakaocertExample.Controllers
             * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
             * - 서명검증시 전자서명 데이터 전문(signedData)이 반환됩니다.
             * - 카카오페이 서비스 운영정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류처리됩니다.
+            * - https://www.kakaocert.com/docs/CMS/API/dotnetcore#VerifyCMS
             */
 
             // Kakaocert 이용기관코드, Kakaocert 파트너 사이트에서 확인
