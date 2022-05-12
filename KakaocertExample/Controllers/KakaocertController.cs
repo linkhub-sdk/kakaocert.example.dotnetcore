@@ -43,7 +43,7 @@ namespace KakaocertExample.Controllers
             requestObj.Expires_in = 60;
 
             // 수신자 생년월일, 형식 : YYYYMMDD
-            requestObj.ReceiverBirthDay = "19900108";
+            requestObj.ReceiverBirthDay = "19700101";
 
             // 수신자 휴대폰번호
             requestObj.ReceiverHP = "010111222";
@@ -102,7 +102,7 @@ namespace KakaocertExample.Controllers
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020090910164100001";
+            string receiptId = "022050910164100001";
 
             try
             {
@@ -128,7 +128,7 @@ namespace KakaocertExample.Controllers
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020090910164100001";
+            string receiptId = "022050910164100001";
 
             // AppToApp 앱스킴 성공처리시 반환되는 서명값(iOS-sig, Android-signature)
             // Talk Message 인증시 null 기재하여 호출.
@@ -169,7 +169,7 @@ namespace KakaocertExample.Controllers
             requestObj.Expires_in = 60;
 
             // 수신자 생년월일, 형식 : YYYYMMDD
-            requestObj.ReceiverBirthDay = "19900108";
+            requestObj.ReceiverBirthDay = "19700101";
 
             // 수신자 휴대폰번호
             requestObj.ReceiverHP = "010111222";
@@ -226,7 +226,7 @@ namespace KakaocertExample.Controllers
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020090910174500001";
+            string receiptId = "022050910174500001";
 
             try
             {
@@ -253,7 +253,7 @@ namespace KakaocertExample.Controllers
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020090910174500001";
+            string receiptId = "022050910174500001";
 
             try
             {
@@ -291,7 +291,7 @@ namespace KakaocertExample.Controllers
             requestObj.Expires_in = 60;
 
             // 수신자 생년월일, 형식 : YYYYMMDD
-            requestObj.ReceiverBirthDay = "19900108";
+            requestObj.ReceiverBirthDay = "19700101";
 
             // 수신자 휴대폰번호
             requestObj.ReceiverHP = "01011112222";
@@ -306,7 +306,7 @@ namespace KakaocertExample.Controllers
             // 계좌번호, 이용기관은 사용자가 식별가능한 범위내에서 계좌번호의 일부를 마스킹 처리할 수 있음 (예시) 371-02-6***85
             requestObj.BankAccountNum = "9-4324-5**7-58";
 
-            // 은행코드
+            // 참가기관 코드
             requestObj.BankCode = "004";
 
             // 납부자번호, 이용기관에서 부여한 고객식별번호
@@ -359,7 +359,7 @@ namespace KakaocertExample.Controllers
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020090910184500001";
+            string receiptId = "022050910184500001";
 
             try
             {
@@ -385,7 +385,7 @@ namespace KakaocertExample.Controllers
             string clientCode = "020040000001";
 
             // 요청시 반환받은 접수아이디
-            string receiptId = "020090910184500001";
+            string receiptId = "022050910184500001";
 
             try
             {
